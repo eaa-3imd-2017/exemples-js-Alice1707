@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document sans nom</title>
+<style>
+
+.niveau {
+	display:none;
+	}
+	
+.niveauactif {
+	display:block;
+	}
+
+</style>
+</head>
+
+<body>
+<nav><ul id="menu">
+<li><a href="#europe">x</a></li>
+<li><a href="#suisse">x</a></li>
+<li><a href="#romandie">x</a></li>
+</ul>
+<div id="europe" class="niveau niveauactif">shdgjdagfdjs</div>
+<div id="suisse" class="niveau">blablaba</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+
+$( "#menu a" ).click(function() {
+ 
+  // récupérer l'élément cliqué
+   var cible = $(this).attr('href');
+  
+    // 1. masquer le niveau actif
+    $( ".niveauactif" ).hide( 2000, function() {
+  
+  // retirer la classe de l'élèment caché
+  $(this).removeClass( "niveauactif" );
+  
+  // afficher le niveau correspondant à cet attribu
+    // 2. afficher le nouveau niveau
+	
+  $(cible).fadeIn( 3000);
+  $(cible).addClass( "niveauactif" );
+  });
+
+  
+  return false;
+});
+</script>
+</body>
+</html>
